@@ -1,7 +1,6 @@
 class WelcomeController < ApplicationController
-  after_filter :clear_session!
 
   def index
-    render :layout => nil
+    cache_response_for 1.minute
   end
 end

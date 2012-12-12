@@ -50,7 +50,7 @@
 
 body {
 	// https://github.com/codepo8/CSS3-Rainbow-Dividers/blob/master/rainbows.scss
-	$gradient: left, red, orange, yellow, green, blue, indigo, violet, indigo, blue, green, yellow, orange, red;
+	$gradient: left, red, orange, yellow, green, blue, indigo, violet, red;
 	background-image: -webkit-linear-gradient($gradient);
 	background-image:    -moz-linear-gradient($gradient);
 	background-image:      -o-linear-gradient($gradient);

@@ -12,15 +12,11 @@ class ApplicationController < ActionController::Base
   def cache_response_for(duration)
     # response.headers["Expires"] = CGI.rfc1123_date(Time.now + expiry)
     response.headers["Expires"] = duration_in_words(duration)
-    expires_in duration_in_seconds(duration), :public => true
+    expires_in duration, :public => true
   end
 
   def duration_in_words(duration)
-    (Time.now + self.duration_in_seconds(duration)).strftime '%a, %d %b %Y %H:%M:%S GMT'
-  end
-
-  def duration_in_seconds(duration)
-    duration.minutes
+    (Time.now + duration).strftime '%a, %d %b %Y %H:%M:%S GMT'
   end
 
 end

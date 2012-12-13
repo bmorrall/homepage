@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ben Morrall</title>
+  <meta name="viewport" content="width=device-width" />
+  <%= favicon_link_tag %>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= csrf_meta_tags %>
+</head>
+<%= content_tag :body, :class => body_class do %>
+
+<%= yield -%>
+
+<%= jquery_include_tag :google %>
+<%= javascript_include_tag "admin/application" %>
+<%= render 'analyticstracking' %>
+<% end %>
+</html>

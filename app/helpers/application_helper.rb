@@ -6,7 +6,7 @@ module ApplicationHelper
       "#{params[:controller]}_#{params[:action]}"
     ]
     classes << "#{params[:controller]}_#{[params[:id]]}" unless params[:id].blank?
-    classes.join(' ')
+    classes.join(' ').gsub('/', '_')
   end
 
 end

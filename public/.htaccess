@@ -1,0 +1,13 @@
+
+# http://codex.wordpress.org/htaccess_for_subdirectories
+<FilesMatch "\.(ico)$">
+  Allow from All
+  FileETag None
+  Header unset ETag
+
+  Header set Cache-Control "max-age=864000, public, must-revalidate"
+  Header unset Last-Modified
+  
+  ExpiresActive on
+  ExpiresByType image/x-icon "access plus 1 month"
+</FilesMatch>

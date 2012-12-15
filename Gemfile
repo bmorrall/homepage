@@ -26,6 +26,9 @@ end
 gem 'jquery-rails'
 gem 'jquery-rails-cdn'
 
+# Use NewRelic RPM for performance monitoring
+gem 'newrelic_rpm'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

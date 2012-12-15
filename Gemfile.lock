@@ -56,6 +56,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.19)
     multi_json (1.4.0)
+    newrelic_rpm (3.5.3.25)
     polyglot (0.3.3)
     rack (1.4.1)
     rack-cache (1.2)
@@ -114,6 +115,7 @@ DEPENDENCIES
   jquery-rails
   jquery-rails-cdn
   libv8 (~> 3.11.8)
+  newrelic_rpm
   rails (= 3.2.9)
   sass-rails (~> 3.2.3)
   sqlite3

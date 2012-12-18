@@ -50,7 +50,7 @@ body {
 
 	// http://xn--ls8h.la/
 	-webkit-animation-name:	rotate;
-	-webkit-animation-duration: 60s;
+	-webkit-animation-duration: 5s;
 	-webkit-animation-iteration-count: infinite;
 	-webkit-animation-timing-function: linear;
 }
@@ -79,7 +79,7 @@ body.welcome #content {
 	background-image:  -khtml-linear-gradient($gradient);
 	background-image:         linear-gradient($gradient);
 
-	$animation: charlieeee 2.5s forwards linear infinite;
+	$animation: charlieeee 10s forwards linear infinite;
 	-moz-animation:    $animation;
 	-webkit-animation: $animation;
 	-o-animation:      $animation;

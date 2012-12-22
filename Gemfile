@@ -10,7 +10,6 @@ gem 'rails', '3.2.9'
 
 gem 'sqlite3'
 
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -28,6 +27,9 @@ gem 'jquery-rails-cdn'
 
 # Use NewRelic RPM for performance monitoring
 gem 'newrelic_rpm'
+
+# Use Settings Gem gem for properties
+gem "rails-settings-cached"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

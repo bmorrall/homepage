@@ -2,6 +2,10 @@ Benmorrall::Application.routes.draw do
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
+  namespace :admin do
+    resource :settings, :only => [:show, :create]
+  end
+
 
   match 'no_cache', :to => 'welcome#no_cache'
   match 'modified', :to => 'welcome#modified'

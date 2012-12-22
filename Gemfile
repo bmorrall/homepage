@@ -16,6 +16,9 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
 
+  # Use Bootstrap for Admin Styles
+  gem 'bootstrap-sass', '~> 2.2.1.1'
+
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
   gem 'bourbon', :git => 'git@github.com:bmorrall/bourbon.git', :branch => 'keyframes-mixin'

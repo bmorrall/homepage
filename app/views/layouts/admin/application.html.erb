@@ -4,15 +4,34 @@
   <title>Ben Morrall</title>
   <meta name="viewport" content="width=device-width" />
   <%= favicon_link_tag %>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag "admin/application", :media => "all" %>
   <%= csrf_meta_tags %>
 </head>
 <%= content_tag :body, :class => body_class do %>
 
-<%= yield -%>
+<div class="container-narrow">
+
+  <div class="masthead">
+    <ul class="nav nav-pills pull-right">
+      <li><%= link_to 'Home', root_url %></li>
+      <li class="active"><%= link_to 'Settings', admin_settings_url %></li>
+    </ul>
+    <h3 class="muted">Ben Morrall</h3>
+  </div>
+
+  <hr>
+
+  <%= yield -%>
+
+  <hr>
+
+  <div class="footer">
+    <p><%= Time.now %></p>
+  </div>
+
+</div> <!-- /container -->
 
 <%= jquery_include_tag :google %>
 <%= javascript_include_tag "admin/application" %>
-<%= render 'analyticstracking' %>
 <% end %>
 </html>

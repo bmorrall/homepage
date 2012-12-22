@@ -3,3 +3,8 @@
 
 en:
   hello: "Hello world"
+
+  notices:
+    admin:
+      settings:
+        create: 'Settings were successfully updated.'

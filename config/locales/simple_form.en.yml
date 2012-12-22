@@ -24,3 +24,20 @@ en:
     #     username: 'User name to sign in.'
     #     password: 'No special characters, please.'
 
+    labels:
+      settings:
+        new: 'Update Settings'
+        edit: 'Update Settings'
+
+    hints:
+      settings:
+        analytics_account: 'Your Google Analytics Account ID for tracking page views'
+        
+    placeholders:
+      settings:
+        analytics_account: UA-XXXXXXXX-X
+        
+  helpers:
+    submit:
+      settings:
+        create: "Update %{model}"

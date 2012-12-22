@@ -1,0 +1,16 @@
+<div class="row-fluid">
+  <div class="span12">
+    <%= simple_form_for(Settings, :url => admin_settings_path, :html => { class: 'form-horizontal' }) do |f| %>
+      <%= f.error_notification %>
+
+      <legend>Analytics</legend>
+      <div class="form-inputs">
+        <%= f.input 'analytics_account', :required => false, :input_html => { class: 'input-xlarge' } %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit %>
+      </div>
+    <% end %>
+  </div>
+</div>

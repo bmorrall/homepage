@@ -29,6 +29,8 @@ body {
 	
 #spiderpig {
 	height: 200px;
+  width: 200px;
+  margin: 0 auto;
 
 	// http://xn--ls8h.la/
   @include animation(rotate 5s forwards linear infinite);

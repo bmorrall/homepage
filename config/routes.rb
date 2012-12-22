@@ -5,6 +5,7 @@ Benmorrall::Application.routes.draw do
   namespace :admin do
     resource :settings, :only => [:show, :create]
   end
+  match "admin" => redirect('/admin/settings')
 
 
   match 'no_cache', :to => 'welcome#no_cache'

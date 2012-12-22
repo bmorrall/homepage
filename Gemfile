@@ -25,6 +25,8 @@ end
 gem 'jquery-rails'
 gem 'jquery-rails-cdn'
 
+gem 'simple_form'
+
 # Use NewRelic RPM for performance monitoring
 gem 'newrelic_rpm'
 

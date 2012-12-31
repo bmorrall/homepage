@@ -51,6 +51,10 @@ gem "rails-settings-cached"
 # To use debugger
 # gem 'debugger'
 
+group :test do
+  gem "shoulda-matchers"
+end
+
 group :test, :development do
   gem "rspec-rails", "~> 2.0"
 end

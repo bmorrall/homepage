@@ -50,3 +50,7 @@ gem "rails-settings-cached"
 
 # To use debugger
 # gem 'debugger'
+
+group :test, :development do
+  gem "rspec-rails", "~> 2.0"
+end

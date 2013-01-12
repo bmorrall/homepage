@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $(window).load ->
-  $('#spiderpig').raptorize()
+  $('#spiderpig img').raptorize()
     # 'enterOn' : 'konami-code'
     
   spiderpigLabel = $('#spiderpig-label').text()

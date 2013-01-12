@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:bmorrall/bourbon.git
+  remote: git://github.com/bmorrall/bourbon.git
   revision: e7f573fa4bc59d9f8211f4689b5dc1f29544ddcf
   branch: keyframes-mixin
   specs:

@@ -24,3 +24,6 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore local gem files
+/vendor/cache

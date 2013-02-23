@@ -1,4 +1,6 @@
 class Admin::SettingsController < Admin::ApplicationController
+  authorize_resource :class => 'Settings' # Only Admin can update Settings
+  
   # GET /admin/settings
   # GET /admin/settings.json
   def show
@@ -10,8 +12,6 @@ class Admin::SettingsController < Admin::ApplicationController
   # POST /admin/settings
   # POST /admin/settings.json
   def create
-    puts settings_params
-    
     settings_params.each do |param, value|
       Settings[param] = value
     end

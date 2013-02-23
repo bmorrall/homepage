@@ -1,0 +1,19 @@
+
+#auth-container {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+
+body.devise_sessions_new #content {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+
+	display: table;
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	-webkit-text-size-adjust: none;
+}

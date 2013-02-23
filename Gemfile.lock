@@ -38,11 +38,13 @@ GEM
       i18n (~> 0.6)
       multi_json (~> 1.0)
     arel (3.0.2)
+    bcrypt-ruby (3.0.1)
     bootstrap-sass (2.2.1.1)
       sass (~> 3.2)
     bourne (1.1.2)
       mocha (= 0.10.5)
     builder (3.0.4)
+    cancan (1.6.9)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -50,11 +52,27 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.4.0)
+    devise (2.1.2)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (~> 3.1)
+      warden (~> 1.2.1)
     diff-lcs (1.1.3)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    factory_girl (4.2.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.2.1)
+      factory_girl (~> 4.2.0)
+      railties (>= 3.0.0)
+    faker (1.1.2)
+      i18n (~> 0.5)
+    faraday (0.8.5)
+      multipart-post (~> 1.1)
+    hashie (1.2.0)
     hike (1.2.1)
+    httpauth (0.2.0)
     i18n (0.6.1)
     journey (1.0.4)
     jquery-rails (2.1.4)
@@ -63,6 +81,8 @@ GEM
     jquery-rails-cdn (0.3.0)
       jquery-rails
     json (1.7.6)
+    jwt (0.1.5)
+      multi_json (>= 1.0)
     libv8 (3.11.8.4)
     mail (2.4.4)
       i18n (>= 0.4.0)
@@ -73,8 +93,23 @@ GEM
     mocha (0.10.5)
       metaclass (~> 0.0.1)
     multi_json (1.4.0)
-    multi_json (1.5.0)
+    multipart-post (1.1.5)
     newrelic_rpm (3.5.3.25)
+    oauth2 (0.8.1)
+      faraday (~> 0.8)
+      httpauth (~> 0.1)
+      jwt (~> 0.1.4)
+      multi_json (~> 1.0)
+      rack (~> 1.2)
+    omniauth (1.1.3)
+      hashie (~> 1.2)
+      rack
+    omniauth-facebook (1.4.1)
+      omniauth-oauth2 (~> 1.1.0)
+    omniauth-oauth2 (1.1.1)
+      oauth2 (~> 0.8.0)
+      omniauth (~> 1.0)
+    orm_adapter (0.4.0)
     polyglot (0.3.3)
     rack (1.4.3)
     rack-cache (1.2)
@@ -143,6 +178,8 @@ GEM
     uglifier (1.3.0)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
+    warden (1.2.1)
+      rack (>= 1.0)
 
 PLATFORMS
   ruby
@@ -150,11 +187,17 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass (~> 2.2.1.1)
   bourbon!
+  cancan
   coffee-rails (~> 3.2.1)
+  devise
+  factory_girl_rails
+  faker
   jquery-rails
   jquery-rails-cdn
   libv8 (~> 3.11.8)
   newrelic_rpm
+  omniauth
+  omniauth-facebook
   rails (= 3.2.11)
   rails-settings-cached
   rspec-rails (~> 2.0)

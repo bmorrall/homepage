@@ -30,6 +30,13 @@ gem 'jquery-rails-cdn'
 
 gem 'simple_form'
 
+gem 'devise'
+
+gem 'omniauth'
+gem 'omniauth-facebook'
+
+gem "cancan"
+
 # Use NewRelic RPM for performance monitoring
 gem 'newrelic_rpm'
 
@@ -52,6 +59,8 @@ gem "rails-settings-cached"
 # gem 'debugger'
 
 group :test do
+  gem "factory_girl_rails"
+  gem "faker"
   gem "shoulda-matchers"
 end
 

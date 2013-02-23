@@ -18,19 +18,17 @@ def set_omniauth(opts = {})
   user_hash = credentials[provider]
  
   OmniAuth.config.test_mode = true
-  OmniAuth.config.mock_auth[provider] = {
+  OmniAuth.config.mock_auth[provider] = Hashie::Mash.new({
     'uid' => credentials[:uuid],
     'provider' => provider,
-    'extra' => {
-      "user_hash" => {
-        "email" => user_hash[:email],
-        "first_name" => user_hash[:first_name],
-        "last_name" => user_hash[:last_name],
-        "name" => [user_hash[:first_name], user_hash[:last_name]].join(' '),
-        "gender" => user_hash[:gender]
-      }
+    "info" => {
+      "email" => user_hash[:email],
+      "first_name" => user_hash[:first_name],
+      "last_name" => user_hash[:last_name],
+      "name" => [user_hash[:first_name], user_hash[:last_name]].join(' '),
+      "gender" => user_hash[:gender]
     }
-  }
+  })
 end
  
 def set_invalid_omniauth(opts = {})

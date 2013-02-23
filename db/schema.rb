@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20130223064359) do
   create_table "user_accounts", :force => true do |t|
     t.string   "provider"
     t.string   "uid"
+    t.text     "extra"
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

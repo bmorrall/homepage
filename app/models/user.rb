@@ -25,13 +25,17 @@ class User < ActiveRecord::Base
         user = signed_in_resource
       else
         user = User.create(
-          name: auth['extra']['user_hash']['name'],
-          email: auth['extra']['user_hash']['email'],
+          name: auth['info']['name'],
+          email: auth['info']['email'],
           password: Devise.friendly_token[0,20]
         )
       end
       if user.persisted?
-        user.user_accounts.create!(provider: auth['provider'], uid: auth['uid'])
+        user.user_accounts.create!(
+          extra: auth['info'].to_hash,
+          provider: auth['provider'],
+          uid: auth['uid']
+        )
       end
       user
     end

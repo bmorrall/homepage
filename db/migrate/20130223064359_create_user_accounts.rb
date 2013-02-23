@@ -3,6 +3,7 @@ class CreateUserAccounts < ActiveRecord::Migration
     create_table :user_accounts do |t|
       t.string :provider
       t.string :uid
+      t.text   :extra, :null => true
       t.references :user
 
       t.timestamps

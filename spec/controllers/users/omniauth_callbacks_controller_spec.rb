@@ -87,7 +87,7 @@ end
 def stub_env_for_omniauth
   # This a Devise specific thing for functional tests. See https://github.com/plataformatec/devise/issues/closed#issue/608
   request.env["devise.mapping"] = Devise.mappings[:user]
-  # env = { "omniauth.auth" => { "provider" => "facebook", "uid" => "1234", "extra" => { "user_hash" => { "email" => "foobar@example.com" } } } }
+  # env = { "omniauth.auth" => { "provider" => "facebook", "uid" => "1234", "extra" => { "raw_info" => { "email" => "foobar@example.com" } } } }
   OmniAuth.config.test_mode = true
   request.env["omniauth.auth"] = set_omniauth
   # ({

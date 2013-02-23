@@ -6,7 +6,6 @@ describe User do
   it { should allow_mass_assignment_of(:password) }
 
   describe "abilities" do
-    before(:each) { ActionController::Base.allow_rescue = true }
     require "cancan/matchers"
 
     subject { ability }

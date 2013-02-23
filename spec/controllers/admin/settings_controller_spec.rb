@@ -7,8 +7,7 @@ describe Admin::SettingsController do
       before(:each) do
         get :show
       end
-      it { response.should redirect_to root_url }
-      it { flash[:notice].should == "Successfully authenticated from Facebook account."}
+      it { response.should redirect_to new_user_session_path }
     end
     context 'with authorized User' do
       before(:each) do

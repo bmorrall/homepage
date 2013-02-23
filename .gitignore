@@ -15,6 +15,7 @@
 /.bundle
 
 # Ignore config files
+/.rvmrc
 /config/newrelic.yml
 
 # Ignore the default SQLite database.

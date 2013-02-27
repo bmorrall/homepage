@@ -1,5 +1,5 @@
 == Ben on Rails
 
-benmorrall.com
+BenMorrall.com
 
 If you didn't know, now you do.

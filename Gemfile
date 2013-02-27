@@ -21,7 +21,8 @@ group :assets do
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
-  gem 'bourbon', :git => 'git://github.com/bmorrall/bourbon.git', :branch => 'keyframes-mixin'
+  gem 'bourbon'
+  # gem 'bourbon', :git => 'git://github.com/bmorrall/bourbon.git', :branch => 'keyframes-mixin'
   gem 'uglifier', '>= 1.0.3'
 end
 

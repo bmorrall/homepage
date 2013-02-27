@@ -1,5 +1,3 @@
-== Ben on Rails
-
-BenMorrall.com
+== BenMorrall.com
 
 If you didn't know, now you do.

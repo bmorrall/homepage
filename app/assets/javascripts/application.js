@@ -11,6 +11,5 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery.raptorize.1.0
-//= require profile
 //= require welcome
 

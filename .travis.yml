@@ -2,6 +2,8 @@ language: ruby
 bundler_args: --without development assets
 rvm:
   - 1.9.3
+script:
+  - bundle exec rake db:test:prepare
 branches:
   only:
     - master

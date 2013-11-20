@@ -1,8 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'libv8', '~> 3.11.8'
-gem "therubyracer", :require => 'v8'
-
 gem 'rails', '3.2.12'
 
 # Bundle edge Rails instead:

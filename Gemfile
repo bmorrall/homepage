@@ -57,6 +57,7 @@ gem "rails-settings-cached"
 # gem 'debugger'
 
 group :test do
+  gem 'coveralls', require: false
   gem "factory_girl_rails"
   gem "faker"
   gem "shoulda-matchers"

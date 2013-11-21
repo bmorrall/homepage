@@ -2,4 +2,5 @@
 
 If you didn't know, now you do.
 
-{<img src="https://travis-ci.org/bmorrall/homepage.png?branch=master" alt="Build Status" />}[https://travis-ci.org/bmorrall/homepage]
+{<img src="https://travis-ci.org/bmorrall/homepage.png?branch=master" alt="Build Status" />}[https://travis-ci.org/bmorrall/homepage] {<img src="https://coveralls.io/repos/bmorrall/homepage/badge.png" alt="Coverage Status" />}[https://coveralls.io/r/bmorrall/homepage]
+

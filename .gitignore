@@ -27,3 +27,7 @@
 
 # Ignore local gem files
 /vendor/cache
+
+# Ignore coverage
+/coverage
+

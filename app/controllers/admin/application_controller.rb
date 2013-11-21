@@ -4,6 +4,6 @@ class Admin::ApplicationController < ActionController::Base
   check_authorization # Ensure CanCan is used for Authorisation
 
   rescue_from CanCan::AccessDenied do |exception|
-    render :file => "#{Rails.root}/public/403.html", :status => 403, :layout => false
+    render :file => "#{Rails.root}/public/403", :status => 403, :layout => false, :formats => [:html]
   end
 end

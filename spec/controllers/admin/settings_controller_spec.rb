@@ -14,10 +14,11 @@ describe Admin::SettingsController do
         user = FactoryGirl.create(:user)
         sign_in user
       end
-      it 'should raise CanCan::AccessDenied' do
-        lambda {
+      context 'with a valid request' do
+        before(:each) do
           get :show
-        }.should raise_error(CanCan::AccessDenied)
+        end
+        it { should render_template(:file => 'public/403.html') }
       end
     end
   end

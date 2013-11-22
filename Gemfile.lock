@@ -137,6 +137,9 @@ GEM
       oauth2 (~> 0.8.0)
       omniauth (~> 1.0)
     orm_adapter (0.4.0)
+    pickle (0.4.11)
+      cucumber (>= 0.8)
+      rake
     polyglot (0.3.3)
     rack (1.4.5)
     rack-cache (1.2)
@@ -230,6 +233,7 @@ DEPENDENCIES
   bootstrap-sass (~> 2.2.1.1)
   bourbon
   cancan
+  capybara
   coffee-rails (~> 3.2.1)
   coveralls
   cucumber-rails
@@ -242,6 +246,7 @@ DEPENDENCIES
   newrelic_rpm
   omniauth
   omniauth-facebook
+  pickle
   rails (= 3.2.12)
   rails-settings-cached
   rspec-rails (~> 2.0)

@@ -5,4 +5,5 @@ Feature: Display Welcome
 
 Scenario: Visit Welcome to see the Pig
   When I go to the homepage
-  Then I should see img within #spiderpig
+  Then I should see #spiderpig within #spiderpig-container
+  And I should see img within #spiderpig

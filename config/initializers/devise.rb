@@ -3,7 +3,7 @@
 Devise.setup do |config|
   require "omniauth-facebook"
   OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE if Rails.env.development? # OS X Development hack
-  config.omniauth :facebook, "APP_ID", "APP_SECRET"
+  config.omniauth :facebook, ENV["FACEBOOK_APP_ID"], ENV["FACEBOOK_SECRET"]
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,

@@ -3,8 +3,13 @@ class Ability
 
   def initialize(user)
     user ||= User.new
+
+    can :manage, User do |u|
+      u.id == user.id
+    end
+
     cannot :manage, Settings # Until Roles are implemented
-    
+
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)

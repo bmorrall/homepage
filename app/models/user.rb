@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :user_accounts
+  has_many :user_accounts, :dependent => :destroy
 
   attr_accessible :name
 
@@ -10,7 +10,9 @@ class User < ActiveRecord::Base
   # devise :recoverable, :rememberable, :trackable, :validatable
   devise :trackable, :validatable
 
-  devise :omniauthable, :omniauth_providers => [:facebook]
+  devise :omniauthable, :omniauth_providers => [
+    :facebook
+  ]
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me

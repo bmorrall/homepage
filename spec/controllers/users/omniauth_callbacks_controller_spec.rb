@@ -1,7 +1,7 @@
 require 'spec_helper'
  
-describe Users::OmniauthCallbacksController, "handle facebook authentication callback" do
-  
+describe Users::OmniauthCallbacksController do
+
   describe "#annonymous user" do
     context "when facebook email doesn't exist in the system" do
       before(:each) do
@@ -20,7 +20,7 @@ describe Users::OmniauthCallbacksController, "handle facebook authentication cal
       it { should be_user_signed_in }
       it { response.should redirect_to root_url }
     end
-    
+
     context "when facebook email already exist in the system" do
       before(:each) do
         stub_env_for_omniauth
@@ -84,16 +84,9 @@ describe Users::OmniauthCallbacksController, "handle facebook authentication cal
   
 end
  
-def stub_env_for_omniauth
+def stub_env_for_omniauth(options = {})
   # This a Devise specific thing for functional tests. See https://github.com/plataformatec/devise/issues/closed#issue/608
   request.env["devise.mapping"] = Devise.mappings[:user]
-  # env = { "omniauth.auth" => { "provider" => "facebook", "uid" => "1234", "extra" => { "raw_info" => { "email" => "foobar@example.com" } } } }
   OmniAuth.config.test_mode = true
-  request.env["omniauth.auth"] = set_omniauth
-  # ({
-  #     :uid => '1234',
-  #     :facebook => {
-  #       :email => 'foobar@example.com'
-  #     }
-  #   })
+  request.env["omniauth.auth"] = set_omniauth(options)
 end

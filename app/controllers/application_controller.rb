@@ -7,6 +7,11 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  # Redirect to self profile after sign in
+  def after_sign_in_path_for(resource)
+    me_users_path
+  end
+
   # check content has changed since last_updated
   def content_changed_since?(last_updated)
     stale?(:last_modified => last_updated)

@@ -14,7 +14,6 @@
   <div class="masthead">
     <ul class="nav nav-pills pull-right">
       <li><%= link_to 'Home', root_url %></li>
-      <li class="active"><%= link_to 'Settings', admin_settings_url %></li>
     </ul>
     <h3 class="muted">Ben Morrall</h3>
   </div>
@@ -26,10 +25,15 @@
   <hr>
 
   <div class="footer">
+    <p style="float:right"><%= link_to "Sign out", destroy_user_session_path, data: {:method => :delete,:confirm => 'Are you Sure?'} %></a>
     <p><%= Time.now %></p>
   </div>
 
 </div> <!-- /container -->
+
+<div style="text-align: center">
+  <%= image_tag 'spiderpig.gif', size: '91x55' %>
+</div>
 
 <%= jquery_include_tag :google %>
 <%= javascript_include_tag "admin/application" %>

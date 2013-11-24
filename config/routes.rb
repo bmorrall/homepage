@@ -5,13 +5,18 @@ Benmorrall::Application.routes.draw do
     get '/users/auth/:provider' => 'users/omniauth_callbacks#passthru'
   end
 
+  resources :users, :only => [:show] do
+    collection do
+      get 'me'
+    end
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
   namespace :admin do
     resource :settings, :only => [:show, :create]
   end
-  match "admin" => redirect('/admin/settings')
-
+  match "admin" => redirect('/users/me')
 
   match 'no_cache', :to => 'welcome#no_cache'
   match 'modified', :to => 'welcome#modified'

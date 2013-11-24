@@ -18,7 +18,7 @@ describe Users::OmniauthCallbacksController do
       end
 
       it { should be_user_signed_in }
-      it { response.should redirect_to root_url }
+      it { response.should redirect_to me_users_path }
     end
 
     context "when facebook email already exist in the system" do
@@ -54,7 +54,7 @@ describe Users::OmniauthCallbacksController do
       end
 
       it { should be_user_signed_in }
-      it { response.should redirect_to root_url }
+      it { response.should redirect_to me_users_path }
       it { flash[:notice].should == "Successfully authenticated from Facebook account."}
     end
 
@@ -78,7 +78,7 @@ describe Users::OmniauthCallbacksController do
 
       it { should be_user_signed_in }
       it { flash[:notice].should == "Successfully authenticated from Facebook account." }
-      it { response.should redirect_to root_url }
+      it { response.should redirect_to me_users_url }
     end
   end
 

@@ -3,20 +3,57 @@ require 'spec_helper'
 describe Admin::SettingsController do
 
   describe '#show' do
-    context 'with unuathorized User' do
+    context 'with no User session' do
       before(:each) do
         get :show
       end
       it { response.should redirect_to new_user_session_path }
     end
-    context 'with authorized User' do
-      before(:each) do
-        user = FactoryGirl.create(:user)
-        sign_in user
-      end
+    context 'with unuathorized User' do
+      login_unauthorized_user
+
       context 'with a valid request' do
         before(:each) do
           get :show
+        end
+        it { should render_template(:file => 'public/403.html') }
+      end
+    end
+    context 'as a User with read Settings permissions' do
+      login_user_with_ability :read, Settings
+
+      context 'with a valid request' do
+        before(:each) do
+          get :show
+        end
+        it { should render_template('show') }
+      end
+    end
+  end
+
+  describe '#create' do
+    context 'with no User session' do
+      before(:each) do
+        post :create
+      end
+      it { response.should redirect_to new_user_session_path }
+    end
+    context 'with unuathorized User' do
+      login_unauthorized_user
+
+      context 'with a valid request' do
+        before(:each) do
+          post :create
+        end
+        it { should render_template(:file => 'public/403.html') }
+      end
+    end
+    context 'as User with create Settings permissions' do
+      login_user_with_ability :create, Settings
+
+      context 'with a valid request' do
+        before(:each) do
+          post :create, { settings: []}
         end
         it { should render_template(:file => 'public/403.html') }
       end

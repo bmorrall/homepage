@@ -3,7 +3,7 @@ require 'spec_helper'
 describe WelcomeController do
 
   describe '#index' do
-    context 'with unuathorized user' do
+    context 'as a visitor' do
       before(:each) { get :index }
       it { should render_template(:index) }
       it { should render_with_layout(:application) }

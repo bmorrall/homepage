@@ -14,7 +14,6 @@ describe "Users" do
       it "renders the user show page" do
         get me_users_path
         response.status.should be(200)
-        puts response.body
       end
     end
   end

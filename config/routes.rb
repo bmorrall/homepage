@@ -18,9 +18,6 @@ Benmorrall::Application.routes.draw do
   end
   match "admin" => redirect('/users/me')
 
-  match 'no_cache', :to => 'welcome#no_cache'
-  match 'modified', :to => 'welcome#modified'
-  match 'combo', :to => 'welcome#combo'
   root :to => 'welcome#index'
 
   # Sample of regular route:

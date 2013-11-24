@@ -1,6 +1,6 @@
 class Admin::SettingsController < Admin::ApplicationController
   authorize_resource :class => 'Settings' # Only Admin can update Settings
-  
+
   # GET /admin/settings
   # GET /admin/settings.json
   def show

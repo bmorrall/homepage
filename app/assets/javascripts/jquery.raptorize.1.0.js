@@ -12,28 +12,28 @@
     $.fn.raptorize = function(options) {
 
         //Yo' defaults
-        var defaults = {  
+        var defaults = {
             enterOn: 'click', //timer, konami-code, click
             delayTime: 5000 //time before raptor attacks on timer mode
-            };  
-        
+            };
+
         //Extend those options
-        var options = $.extend(defaults, options); 
-	
+        var options = $.extend(defaults, options);
+
         return this.each(function() {
 
 			var _this = $(this);
 			var audioSupported = false;
 			//Stupid Browser Checking which should be in jQuery Support
-			if (Modernizr.audio) { 
+			if (Modernizr.audio) {
 				audioSupported = true;
 			}
-			
+
 			//Raptor Vars
 			var raptorImageMarkup = '<img id="elRaptor" style="display: none" src="/assets/raptor.png" />'
-			var raptorAudioMarkup = '<audio id="elRaptorShriek" preload="auto"><source src="/audios/raptor-sound.mp3" /><source src="/audios/raptor-sound.ogg" /></audio>';	
+			var raptorAudioMarkup = '<audio id="elRaptorShriek" preload="auto"><source src="/audios/raptor-sound.mp3" /><source src="/audios/raptor-sound.ogg" /></audio>';
 			var locked = false;
-			
+
 			//Append Raptor and Style
 			$('body').append(raptorImageMarkup);
  			if(audioSupported) { $('body').append(raptorAudioMarkup); }
@@ -43,23 +43,23 @@
 				"right" : "0",
 				"display" : "block"
 			})
-			
+
 			// Animating Code
 			function init() {
 				locked = true;
-			
+
 				//Sound Hilarity
-				if(audioSupported) { 
+				if(audioSupported) {
 					function playSound() {
 						document.getElementById('elRaptorShriek').play();
 					}
 					playSound();
 				}
-								
-				// Movement Hilarity	
+
+				// Movement Hilarity
 				raptor.animate({
 					"bottom" : "0"
-				}, function() { 			
+				}, function() {
 					$(this).animate({
 						"bottom" : "-130px"
 					}, 100, function() {
@@ -76,8 +76,8 @@
 					});
 				});
 			}
-			
-			
+
+
 			//Determine Entrance
 			if(options.enterOn == 'timer') {
 				setTimeout(init, options.delayTime);
@@ -97,9 +97,9 @@
 			        	$(window).unbind('keydown.raptorz');
 			        }
 			    }, true);
-	
+
 			}
-			
+
         });//each call
     }//orbit plugin call
 })(jQuery);

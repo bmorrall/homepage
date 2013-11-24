@@ -5,11 +5,11 @@
 @import "bourbon";
 
 /*
- * CSS animated rainbow dividers of awesome 
+ * CSS animated rainbow dividers of awesome
  * by Chris Heilmann @codepo8 and Lea Verou @leaverou and unicorn @ollie
  **/
 @include keyframes(charlieeee) {
-	from { background-position: top left; } 
+	from { background-position: top left; }
 	to   { background-position: top right; }
 }
 
@@ -26,7 +26,7 @@ body {
 	margin: 0;
 	padding: 0;
 }
-	
+
 #spiderpig {
 	height: 200px;
   width: 200px;

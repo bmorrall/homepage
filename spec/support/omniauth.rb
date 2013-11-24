@@ -12,11 +12,11 @@ def set_omniauth(opts = {})
       :last_name => "bar"
     }
   }
- 
+
   credentials = default.merge(opts)
   provider = credentials[:provider]
   user_hash = credentials[provider]
- 
+
   OmniAuth.config.test_mode = true
   OmniAuth.config.mock_auth[provider] = Hashie::Mash.new({
     'uid' => credentials[:uuid],
@@ -30,13 +30,13 @@ def set_omniauth(opts = {})
     }
   })
 end
- 
+
 def set_invalid_omniauth(opts = {})
   credentials = {
     :provider => :facebook,
     :invalid  => :invalid_crendentials
   }.merge(opts)
-  
+
   OmniAuth.config.test_mode = true
   OmniAuth.config.mock_auth[credentials[:provider]] = credentials[:invalid]
 end

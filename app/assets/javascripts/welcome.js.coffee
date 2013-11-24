@@ -8,11 +8,11 @@ if window.screen.height == 568 # iPhone 4"
 $(window).load ->
   $('#spiderpig img').raptorize()
     # 'enterOn' : 'konami-code'
-    
+
   spiderpigLabel = $('#spiderpig-label').text()
   callbackPID = null
   spiderpigCallback = ->
-    if $('#spiderpig-label').text() == spiderpigLabel 
+    if $('#spiderpig-label').text() == spiderpigLabel
       $('#spiderpig-label').text('//github.com/bmorrall')
     else
       $('#spiderpig-label').text(spiderpigLabel)
@@ -25,4 +25,4 @@ $(window).load ->
     return
   return
 
-  
+

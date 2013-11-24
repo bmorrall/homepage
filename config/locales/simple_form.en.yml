@@ -32,11 +32,11 @@ en:
     hints:
       settings:
         analytics_account: 'Your Google Analytics Account ID for tracking page views'
-        
+
     placeholders:
       settings:
         analytics_account: UA-XXXXXXXX-X
-        
+
   helpers:
     submit:
       settings:

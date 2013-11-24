@@ -7,6 +7,8 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
 
+require "cancan/matchers"
+
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
@@ -41,4 +43,5 @@ RSpec.configure do |config|
 
   # Add RSpec Test Helpers
   config.include Devise::TestHelpers, :type => :controller
+  config.include RequestMacros, :type => :request
 end

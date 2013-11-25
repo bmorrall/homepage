@@ -13,4 +13,3 @@ Scenario: Clicking on the Pig
   When I go to the homepage
   And I click on the pig
   Then I should see the Raptor
-  And I should hear the Raptor

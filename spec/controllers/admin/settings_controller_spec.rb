@@ -16,7 +16,7 @@ describe Admin::SettingsController do
         before(:each) do
           get :show
         end
-        it { should render_template(:file => 'public/403.html') }
+        it { should render_template(:file => "#{Rails.root}/public/403.html") }
       end
     end
     context 'as a User with read Settings permissions' do
@@ -45,7 +45,7 @@ describe Admin::SettingsController do
         before(:each) do
           post :create
         end
-        it { should render_template(:file => 'public/403.html') }
+        it { should render_template(:file => "#{Rails.root}/public/403.html") }
       end
     end
     context 'as User with create Settings permissions' do

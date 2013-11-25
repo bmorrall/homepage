@@ -5,6 +5,8 @@ Devise.setup do |config|
   OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE if Rails.env.development? # OS X Development hack
   config.omniauth :facebook, ENV["FACEBOOK_APP_ID"], ENV["FACEBOOK_SECRET"]
 
+  config.secret_key = 'eb269fccdc291582a197882878912ffc20e04726297df830b4dcac525ea7a25e73e167a42c82873aeead4460f1b2322203a634ab40824f45b4ae99d706038852'
+
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class with default "from" parameter.

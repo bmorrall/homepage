@@ -16,7 +16,7 @@ Benmorrall::Application.routes.draw do
   namespace :admin do
     resource :settings, :only => [:show, :create]
   end
-  match "admin" => redirect('/users/me')
+  get "admin" => redirect('/users/me')
 
   root :to => 'welcome#index'
 

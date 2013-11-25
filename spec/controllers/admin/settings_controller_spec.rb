@@ -51,11 +51,11 @@ describe Admin::SettingsController do
     context 'as User with create Settings permissions' do
       login_user_with_ability :create, Settings
 
-      context 'with a valid request' do
-        before(:each) do
-          post :create, { settings: []}
+      context 'with a valid params' do
+        it 'should update the analytics_account property on Settings' do
+          Settings.should_receive("[]=").with('analytics_account', 'UA-123456789')
+          post :create, { settings: { :analytics_account => 'UA-123456789' }}
         end
-        it { should render_template(:file => 'public/403.html') }
       end
     end
   end

@@ -10,5 +10,5 @@ Scenario: Visit Welcome to see the Pig
 @javascript
 Scenario: Clicking on the Pig
   When I go to the homepage
-  And I click on the pig
+  And I click on the Pig
   Then I should see and hear the Raptor

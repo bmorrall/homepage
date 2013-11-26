@@ -12,5 +12,4 @@ Scenario: Visit Welcome to see the Pig
 Scenario: Clicking on the Pig
   When I go to the homepage
   And I click on the pig
-  Then I should see the Raptor
-  And I should see the Raptor
+  Then I should see and hear the Raptor

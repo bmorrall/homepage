@@ -12,9 +12,9 @@ end
 
 Then /^(?:|I )should hear the Raptor$/ do
   if page.respond_to? :should
-    page.should have_selector('audio#elRaptorShriek')
+    page.should have_selector('audio#elRaptorShriek', :visible => false)
   else
-    assert page.has_selector?('audio#elRaptorShriek')
+    assert page.has_selector?('audio#elRaptorShriek', :visible => false)
   end
 end
 

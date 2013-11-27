@@ -7,11 +7,6 @@ Then /^(?:|I )should see the Pig$/ do
 end
 
 Then /^(?:|I )should see and hear the Raptor$/ do
-  if page.respond_to? :should
-    page.should have_selector('#elRaptor')
-    page.should have_selector('audio#elRaptorShriek', :visible => false)
-  else
-    assert page.has_selector?('#elRaptor')
-    assert page.has_selector?('audio#elRaptorShriek', :visible => false)
-  end
+  page.should have_selector('.raptor')
+  page.should have_selector('audio', :visible => false)
 end

@@ -15,22 +15,30 @@
 @import "bootstrap/variables"; // Modify this for custom colors, font-sizes, etc
 @import "bootstrap/mixins";
 
-@import "bootstrap/reset";
+// Reset
+@import "bootstrap/normalize";
 
-// Grid system and page structure
+// Core CSS
 @import "bootstrap/scaffolding";
-@import "bootstrap/grid";
-@import "bootstrap/layouts";
-
-// Base CSS
 @import "bootstrap/type";
+@import "bootstrap/code";
+@import "bootstrap/grid";
 
-// Components: Nav
+// Components
 @import "bootstrap/navs";
 @import "bootstrap/navbar";
+@import "bootstrap/alerts";
+@import "bootstrap/close";
+
+// @import "bootstrap/theme";
+
+// Navigation Bar
+.navbar-brand {
+  color: $gray;
+}
 
 @media (max-width: 979px) {
-  .navbar .brand {
+  .navbar-brand {
     margin-left: 0;
   }
 }

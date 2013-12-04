@@ -7,7 +7,7 @@
   <meta name="apple-mobile-web-app-capable" content="true" />
   <meta name="apple-mobile-web-app-title" content="Ben Morrall" />
   <%= favicon_link_tag %>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag "modernizr" %>
 </head>
 <%= content_tag :body, :class => body_class do %>
@@ -21,10 +21,9 @@
 </div>
 
 <div id="content">
+  <a href="https://github.com/bmorrall/homepage" class="github-banner"><img src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png" alt="Fork me on GitHub"></a>
 
-<a href="https://github.com/bmorrall/homepage"><img style="z-index: 10; position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png" alt="Fork me on GitHub"></a>
-
-<%= yield -%>
+  <%= yield -%>
 </div>
 
 <%= jquery_include_tag :google %>

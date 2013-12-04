@@ -37,6 +37,15 @@
   color: $gray;
 }
 
+// GitHub Banner
+.github-banner img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 0;
+  z-index: 10;
+}
+
 @media (max-width: 979px) {
   .navbar-brand {
     margin-left: 0;

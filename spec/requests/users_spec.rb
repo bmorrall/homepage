@@ -7,6 +7,8 @@ describe "Users" do
       it "redirects to the new session path" do
         get me_users_path
         response.should redirect_to(new_user_session_path)
+        follow_redirect!
+        response.body.should include('You need to sign in or sign up before continuing.')
       end
     end
     context "as a signed in user" do

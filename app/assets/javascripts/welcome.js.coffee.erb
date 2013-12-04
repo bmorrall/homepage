@@ -7,11 +7,14 @@ if window.screen.height == 568 # iPhone 4"
 
 $(window).load ->
   # Attach the Raptor
-  $('#spiderpig img').raptorize({
-    playAudio: Modernizr.audio,
-    imageSource: "<%= image_path 'raptor.png' %>",
-    audioSources: ["<%= audio_path 'raptor-sound.mp3' %>", "<%= audio_path 'raptor-sound.ogg' %>"]
-  })
+  $('#spiderpig img')
+    .raptorize
+      playAudio: Modernizr.audio,
+      imageSource: "<%= image_path 'raptor.png' %>",
+      audioSources: ["<%= audio_path 'raptor-sound.mp3' %>", "<%= audio_path 'raptor-sound.ogg' %>"]
+    .click (e)->
+      _gaq?.push ['_trackEvent', 'clickedPig']
+      return
 
   spiderpigLabel = $('#spiderpig-label').text()
   callbackPID = null

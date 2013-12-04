@@ -5,6 +5,11 @@
 	vertical-align: middle;
 }
 
+.auth-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 body.devise_sessions_new #content {
 	position: absolute;
 	top: 0;

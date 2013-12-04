@@ -11,7 +11,7 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery.raptorize.1.1
-//= require bootstrap
+//= require bootstrap/alert
 //= require welcome
 
 var resizeContent = function() {

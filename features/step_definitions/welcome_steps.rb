@@ -1,3 +1,4 @@
+
 When /^(?:|I )click on the Pig$/ do
   find('#spiderpig img').click
 end

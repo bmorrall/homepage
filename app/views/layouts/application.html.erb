@@ -20,6 +20,6 @@
 
 <%= jquery_include_tag :google %>
 <%= javascript_include_tag "application" %>
-<% unless Settings.analytics_account.nil? %><%= render 'analyticstracking', :analytics_account => Settings.analytics_account %><% end %>
+<% unless Settings.analytics_account.blank? %><%= render 'analyticstracking', :analytics_account => Settings.analytics_account %><% end %>
 <% end %>
 </html>

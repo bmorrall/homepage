@@ -44,7 +44,7 @@ module Rails
 end
 
 # Flush the cache after each test
-After do
+Before do
   Rails.cache.clear
 end
 

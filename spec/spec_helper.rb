@@ -41,6 +41,10 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
 
+  config.after(:each) {
+    Rails.cache.clear # Flush the rails cache
+  }
+
   # Add RSpec Test Helpers
   config.include Devise::TestHelpers, :type => :controller
   config.include ControllerMacros, :type => :controller

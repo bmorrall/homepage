@@ -8,12 +8,12 @@ Then /^(?:|I )should have a tracking script$/ do
   page.should have_selector(:xpath, './/script[@src="http://www.google-analytics.com/ga.js"]', visible: false)
 
   # Check Tracking Script Account
-  result = page.evaluate_script('_gaq[0]')
+  result = page.evaluate_script('window._gaq[0]')
   result[0].should eq('_setAccount')
   result[1].should eq('UA-12345678-A')
 
   # Check Page View was added
-  result = page.evaluate_script('_gaq[1]')
+  result = page.evaluate_script('window._gaq[1]')
   result[0].should eq('_trackPageview')
 end
 

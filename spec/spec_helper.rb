@@ -13,13 +13,6 @@ require "cancan/matchers"
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
-# Use an in memory cache
-module Rails
-  def self.cache
-    @cache ||= ActiveSupport::Cache::MemoryStore.new
-  end
-end
-
 RSpec.configure do |config|
   # ## Mock Framework
   #
@@ -47,10 +40,6 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
-
-  config.before(:each) {
-    Rails.cache.clear # Flush the rails cache
-  }
 
   # Add RSpec Test Helpers
   config.include Devise::TestHelpers, :type => :controller

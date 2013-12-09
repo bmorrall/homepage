@@ -36,7 +36,14 @@ rescue NameError
   raise "You need to add database_cleaner to your Gemfile (in the :test group) if you wish to use it."
 end
 
-# Flush any data saved to the cache
+# Use an in memory cache
+module Rails
+  def self.cache
+    @cache ||= ActiveSupport::Cache::MemoryStore.new
+  end
+end
+
+# Flush the cache after each test
 After do
   Rails.cache.clear
 end

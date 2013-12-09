@@ -13,6 +13,13 @@ require "cancan/matchers"
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
+# Use an in memory cache
+module Rails
+  def self.cache
+    @cache ||= ActiveSupport::Cache::MemoryStore.new
+  end
+end
+
 RSpec.configure do |config|
   # ## Mock Framework
   #

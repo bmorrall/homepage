@@ -17,8 +17,9 @@ Then /^(?:|I )should have a tracking script$/ do
   result[0].should eq('_trackPageview')
 end
 
-Then /^(?:|I )should fire a (.+) tracking event$/ do |event_name|
+Then /^(?:|I )should fire a (.+):(.+) tracking event$/ do |event_category, event_name|
   result = page.evaluate_script('_gaq[_gaq.length - 1]')
   result[0].should eq('_trackEvent')
-  result[1].should eq(event_name)
+  result[1].should eq(event_category)
+  result[2].should eq(event_name)
 end 

@@ -13,7 +13,7 @@ $(window).load ->
       imageSource: "<%= image_path 'raptor.png' %>",
       audioSources: ["<%= audio_path 'raptor-sound.mp3' %>", "<%= audio_path 'raptor-sound.ogg' %>"]
     .click (e)->
-      _gaq?.push ['_trackEvent', 'clickedPig']
+      _gaq?.push ['_trackEvent', 'welcome', 'clickedPig']
       true # Don't prevent callback
 
   # Update the User's label

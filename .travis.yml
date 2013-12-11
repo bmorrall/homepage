@@ -12,4 +12,5 @@ script:
 branches:
   only:
     - master
+    - wip/travispassing
 

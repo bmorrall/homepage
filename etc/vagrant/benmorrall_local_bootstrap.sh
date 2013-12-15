@@ -33,16 +33,19 @@ popd
 rbenv install 1.9.3-p484
 rbenv global 1.9.3-p484
 
+# Rehash
+rbenv rehash
+
+# Install Bundler
+gem install bundler
+rbenv rehash
+
 # Setup Directories
 mkdir /webapps
 ln -fs /vagrant $PROJECT_DIR
 
-# Rehash
-rbenv rehash
-
 # Setup the project
 pushd $PROJECT_DIR
-  gem install bundler
   bundle install
   touch tmp/restart.txt
 popd

@@ -5,14 +5,17 @@ PROJECT_DIR="/webapps/benmorrall.local"
 apt-get update
 
 # Install build essentials
-apt-get -y install build-essential git-core
+apt-get install -y build-essential git-core
 
 # Install dev essentials
 apt-get install -y vim
 
+# Install QT (capybara-webkit)
+apt-get install -y libqt4-dev
+
 # Install rbenv
 git clone git://github.com/sstephenson/rbenv.git /usr/local/rbenv
- 
+
 # Add rbenv to the path
 echo '# rbenv setup' > /etc/profile.d/rbenv.sh
 echo 'export RBENV_ROOT=/usr/local/rbenv' >> /etc/profile.d/rbenv.sh

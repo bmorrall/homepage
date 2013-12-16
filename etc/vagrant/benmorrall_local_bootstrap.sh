@@ -1,6 +1,14 @@
 #!/usr/bin/env bash
 
 PROJECT_DIR="/webapps/benmorrall.local"
+LOCALE="en_AU.UTF-8"
+
+# Setup Locale to en_AU.UTF-8
+echo "export LANGUAGE=\"${LOCALE}\"" > /etc/profile.d/lang.sh
+echo "export LANG=\"${LOCALE}\"" >> /etc/profile.d/lang.sh
+echo "export LC_ALL=\"${LOCALE}\"" >> /etc/profile.d/lang.sh
+chmod +x /etc/profile.d/lang.sh
+source /etc/profile.d/lang.sh
 
 apt-get update
 
@@ -10,8 +18,17 @@ apt-get install -y build-essential git-core
 # Install dev essentials
 apt-get install -y vim
 
+# Install PostgresSQL (pg)
+apt-get install -y postgresql postgresql-contrib libpq-dev
+sudo -u postgres createuser --createdb --no-adduser --no-createrole --login -e vagrant
+sudo -u postgres createdb -O vagrant -e benmorrall_development
+sudo -u postgres createdb -O vagrant -e benmorrall_test
+
+# Install Node.js (execjs)
+apt-get install -y nodejs
+
 # Install QT (capybara-webkit)
-apt-get install -y libqt4-dev
+apt-get install -y libqt4-dev xvfb
 
 # Install rbenv
 git clone git://github.com/sstephenson/rbenv.git /usr/local/rbenv
@@ -46,6 +63,10 @@ rbenv rehash
 # Setup Directories
 mkdir /webapps
 ln -fs /vagrant $PROJECT_DIR
+
+# Setup xvfb (headerless testing)
+cp $PROJECT_DIR/etc/ubuntu/xvfb_init_d /etc/init.d/xvfb
+chmod 755 /etc/init.d/xvfb
 
 # Setup the project
 pushd $PROJECT_DIR

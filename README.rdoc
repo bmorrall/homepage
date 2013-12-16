@@ -4,3 +4,15 @@ If you didn't know, now you do.
 
 {<img src="https://travis-ci.org/bmorrall/homepage.png?branch=master" alt="Build Status" />}[https://travis-ci.org/bmorrall/homepage] {<img src="https://coveralls.io/repos/bmorrall/homepage/badge.png" alt="Coverage Status" />}[https://coveralls.io/r/bmorrall/homepage] {<img src="https://gemnasium.com/bmorrall/homepage.png" alt="Dependency Status" />}[https://gemnasium.com/bmorrall/homepage]
 
+== Vagrant Development
+
+This project uses {Vagrant}[http://vagrantup.com] for development, use `vagrant up` to setup a development virtual machine. Run `vagrant ssh` to access it.
+
+=== Headerless Tests
+
+The Vagrant setup script installs {Xvfb}[http://en.wikipedia.org/wiki/Xvfb] for headerless testing. Run the following commands to run tests in headerless mode.
+
+    export DISPLAY=:99
+    sudo /etc/init.d/xvfb start
+    # Run headerless tests (i.e. bundle exec cucumber)
+    sudo /etc/init.d/xvfb stop

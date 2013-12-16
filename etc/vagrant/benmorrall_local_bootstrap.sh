@@ -65,7 +65,7 @@ mkdir /webapps
 ln -fs /vagrant $PROJECT_DIR
 
 # Setup xvfb (headerless testing)
-cp $PROJECT_DIR/etc/ubuntu/xvfb_init_d /etc/init.d/xvfb
+cp $PROJECT_DIR/etc/vagrant/init_d_xvfb /etc/init.d/xvfb
 chmod 755 /etc/init.d/xvfb
 
 # Setup the project

@@ -3,7 +3,8 @@ bundler_args: --without development
 rvm:
   - 1.9.3
 before_install:
-  - psql -c 'CREATE ROLE vagrant NOSUPERUSER CREATEDB NOCREATEROLE INHERIT LOGIN;CREATE DATABASE benmorrall_test OWNER vagrant;' -U postgres
+  - psql -c 'CREATE ROLE vagrant NOSUPERUSER CREATEDB NOCREATEROLE INHERIT LOGIN;' -U postgres
+  - psql -c 'CREATE DATABASE benmorrall_test OWNER vagrant;' -U postgres
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
 script:
@@ -13,4 +14,5 @@ script:
 branches:
   only:
     - master
+    - wip/travispassing
 

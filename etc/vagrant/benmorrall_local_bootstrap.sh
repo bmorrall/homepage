@@ -36,6 +36,9 @@ apt-get install -y nodejs
 # Install QT (capybara-webkit)
 apt-get install -y libqt4-dev xvfb
 
+# Install libxslt and libxml2 (nokogiri)
+apt-get install -y libxslt-dev libxml2-dev
+
 # Install rbenv
 git clone git://github.com/sstephenson/rbenv.git /usr/local/rbenv
 
@@ -47,6 +50,18 @@ echo 'eval "$(rbenv init -)"' >> /etc/profile.d/rbenv.sh
  
 chmod +x /etc/profile.d/rbenv.sh
 source /etc/profile.d/rbenv.sh
+
+# Install ruby-build
+pushd /tmp
+  git clone git://github.com/sstephenson/ruby-build.git
+  cd ruby-build
+  ./install.sh
+popd
+ 
+# Install Ruby 1.9.3-p484
+rbenv install 1.9.3-p484
+rbenv global 1.9.3-p484
+rbenv rehash
 
 # Install Phusion Passenger
 gem install passenger -v '4.0.29'
@@ -60,20 +75,6 @@ LoadModule passenger_module /usr/local/rbenv/versions/1.9.3-p484/lib/ruby/gems/1
 PassengerRoot /usr/local/rbenv/versions/1.9.3-p484/lib/ruby/gems/1.9.1/gems/passenger-4.0.29
 PassengerDefaultRuby /usr/local/rbenv/versions/1.9.3-p484/bin/ruby
 PASSENGER"
-
-# Install ruby-build
-pushd /tmp
-  git clone git://github.com/sstephenson/ruby-build.git
-  cd ruby-build
-  ./install.sh
-popd
- 
-# Install Ruby 1.9.3-p484
-rbenv install 1.9.3-p484
-rbenv global 1.9.3-p484
-
-# Rehash
-rbenv rehash
 
 # Install Bundler
 gem install bundler
@@ -91,6 +92,8 @@ chmod 755 /etc/init.d/xvfb
 pushd $PROJECT_DIR
   bundle install
   touch tmp/restart.txt
+  rbenv rehash
+  rake db:migrate db:test:prepare
 popd
 
 # Create the apache config

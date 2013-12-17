@@ -24,4 +24,7 @@ Group vagrant
 
   # Configure Passenger (development)
   PassengerAppEnv development
+  PassengerUser vagrant
+  PassengerGroup vagrant
+  PassengerFriendlyErrorPages on
 </VirtualHost>

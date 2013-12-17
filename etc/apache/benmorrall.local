@@ -1,0 +1,27 @@
+# Change to vagrant user (dev only!)
+User vagrant
+Group vagrant
+
+<VirtualHost *:80>
+  ServerName benmorrall.local
+  ServerAlias www.benmorrall.local
+  DocumentRoot /webapps/benmorrall.local/public
+
+  # redirect to without the www
+  RewriteEngine On
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$
+  RewriteRule ^/(.*)$ http://%1/$1 [R=301,L]
+
+  <Directory /webapps/benmorrall.local/public>
+    Allow from all
+    Options -MultiViews
+  </Directory>
+
+  # Keep a log of all warnings and errors
+  LogLevel warn
+  ErrorLog  /webapps/benmorrall.local/log/error.log
+  CustomLog /webapps/benmorrall.local/log/access.log combined
+
+  # Configure Passenger (development)
+  PassengerAppEnv development
+</VirtualHost>

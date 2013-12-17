@@ -13,10 +13,16 @@ source /etc/profile.d/lang.sh
 apt-get update
 
 # Install build essentials
-apt-get install -y build-essential git-core
+apt-get install -y build-essential git-core libcurl4-openssl-dev
 
 # Install dev essentials
 apt-get install -y vim
+
+# Install Apache
+apt-get install -y apache2 apache2-mpm-prefork apache2-prefork-dev
+a2enmod expires
+a2enmod headers
+a2enmod rewrite
 
 # Install PostgresSQL (pg)
 apt-get install -y postgresql postgresql-contrib libpq-dev
@@ -41,6 +47,19 @@ echo 'eval "$(rbenv init -)"' >> /etc/profile.d/rbenv.sh
  
 chmod +x /etc/profile.d/rbenv.sh
 source /etc/profile.d/rbenv.sh
+
+# Install Phusion Passenger
+gem install passenger -v '4.0.29'
+rbenv rehash
+passenger-install-apache2-module --auto
+
+sudo bash -c "cat >> /etc/apache2/apache2.conf <<PASSENGER
+
+# Include Phusion Passenger
+LoadModule passenger_module /usr/local/rbenv/versions/1.9.3-p484/lib/ruby/gems/1.9.1/gems/passenger-4.0.29/buildout/apache2/mod_passenger.so
+PassengerRoot /usr/local/rbenv/versions/1.9.3-p484/lib/ruby/gems/1.9.1/gems/passenger-4.0.29
+PassengerDefaultRuby /usr/local/rbenv/versions/1.9.3-p484/bin/ruby
+PASSENGER"
 
 # Install ruby-build
 pushd /tmp
@@ -73,3 +92,14 @@ pushd $PROJECT_DIR
   bundle install
   touch tmp/restart.txt
 popd
+
+# Create the apache config
+cp $PROJECT_DIR/etc/apache/benmorrall.local /etc/apache2/sites-available/benmorrall.local
+
+# Reload Apache
+a2dissite 000-default
+a2ensite benmorrall.local
+service apache2 reload
+
+# Add Apache to System init scripts
+# update–rc.d apache2 defaults

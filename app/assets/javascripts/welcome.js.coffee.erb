@@ -19,6 +19,9 @@ $(window).load ->
       _gaq?.push ['_trackEvent', 'welcome', 'clickedPig']
       true # Don't prevent callback
 
+  # Attach the Swarm
+  raptorize.onKonami(raptor_options)
+
   # Update the User's label
   spiderpigLabel = $('#spiderpig-label').text()
   callbackPID = null

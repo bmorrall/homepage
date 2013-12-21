@@ -12,6 +12,7 @@
 //
 //= require jquery.raptorize.1.1
 //= require bootstrap/alert
+//= require analytics
 //= require welcome
 
 var resizeContent = function() {

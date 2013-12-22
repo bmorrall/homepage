@@ -1,7 +1,10 @@
 <script type="text/javascript">
   var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', '<%=j analytics_account %>']);
-  _gaq.push(['_trackPageview']);
+  <%- unless Rails.env.production? -%>
+  Analytics.debug = true;
+  <%- end -%>
+  Analytics.push(['_setAccount', '<%=j analytics_account %>']);
+  Analytics.push(['_trackPageview']);
 
   (function() {
     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;

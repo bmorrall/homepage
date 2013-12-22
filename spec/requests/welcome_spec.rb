@@ -11,7 +11,7 @@ describe "Welcome" do
       it 'renders the Google Analytics content' do
         Settings.analytics_account = 'UA-12345678'
         get root_url
-        response.body.should include("_gaq.push(['_setAccount', 'UA-12345678'])")
+        response.body.should include("Analytics.push(['_setAccount', 'UA-12345678'])")
       end
     end
   end

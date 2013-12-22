@@ -10,7 +10,8 @@ $ ->
   raptorize.config {
     playAudio: Modernizr.audio,
     imageSource: "<%= image_path 'raptor.png' %>",
-    audioSources: ["<%= audio_path 'raptor-sound.mp3' %>", "<%= audio_path 'raptor-sound.ogg' %>"]
+    audioSources: ["<%= audio_path 'raptor-sound.mp3' %>", "<%= audio_path 'raptor-sound.ogg' %>"],
+    swarmAudioSources: ["<%= audio_path 'valkyries.mp3' %>"]
   }
 
   # Attach the Raptor
@@ -30,8 +31,8 @@ $ ->
     Analytics.push ['_trackEvent', 'welcome', 'konamiCode']
     raptorize.raptorSwarm();
 
-    # Resume scrolling the User Label
-    setTimeout(spiderpigCallback, 8000)
+    # Resume scrolling the User Label (30 seconds)
+    setTimeout(spiderpigCallback, 30000)
     true # Run find
   )
 

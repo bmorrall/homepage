@@ -11,6 +11,7 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery.raptorize.1.1
+//= require konami
 //= require bootstrap/alert
 //= require analytics
 //= require layout

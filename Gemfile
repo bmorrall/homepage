@@ -28,6 +28,9 @@ gem 'uglifier', '>= 1.0.3'
 gem 'jquery-rails'
 gem 'jquery-rails-cdn'
 
+# Use High Voltage for static pages
+gem 'high_voltage', '~> 2.1.0'
+
 gem 'simple_form'
 
 gem 'devise'

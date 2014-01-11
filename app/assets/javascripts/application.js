@@ -15,5 +15,5 @@
 //= require bootstrap/alert
 //= require analytics
 //= require layout
-//= require welcome
+//= require pages
 

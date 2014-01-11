@@ -33,6 +33,9 @@ gem 'high_voltage', '~> 2.1.0'
 
 gem 'simple_form'
 
+# Use Flutie for page styles
+gem 'flutie'
+
 gem 'devise'
 
 gem 'omniauth'

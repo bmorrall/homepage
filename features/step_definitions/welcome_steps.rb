@@ -4,6 +4,7 @@ When /^(?:|I )click on the Pig$/ do
 end
 
 Then /^(?:|I )should see the Pig$/ do
+  page.should have_selector('body.welcome #content')
   page.should have_selector('#spiderpig img')
 end
 

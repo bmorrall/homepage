@@ -1,7 +1,7 @@
 language: ruby
 bundler_args: --without development
 rvm:
-  - 1.9.3
+  - 2.1.0
 before_install:
   - psql -c 'CREATE DATABASE benmorrall_test OWNER postgres;' -U postgres
   - "export DISPLAY=:99.0"

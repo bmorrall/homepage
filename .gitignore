@@ -31,3 +31,6 @@
 # Ignore coverage
 /coverage
 
+# Ignore Ruby Config
+/.ruby-version
+

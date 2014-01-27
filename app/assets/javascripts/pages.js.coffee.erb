@@ -2,23 +2,41 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
-if window.screen.height == 568 # iPhone 4"
-  document.querySelector("meta[name=viewport]").content = "width=320.1, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-
 $ ->
+  spiderpigLabel = $('#spiderpig-label').text()
+  callbackPID = null
+
+  # Setup Raptorize
+  raptorize.config {
+    playAudio: Modernizr.audio,
+    imageSource: "<%= image_path 'raptor.png' %>",
+    audioSources: ["<%= audio_path 'raptor-sound.mp3' %>", "<%= audio_path 'raptor-sound.ogg' %>"],
+    swarmAudioSources: ["<%= audio_path 'valkyries.mp3' %>"]
+  }
+
   # Attach the Raptor
   $('#spiderpig img')
-    .raptorize
-      playAudio: Modernizr.audio,
-      imageSource: "<%= image_path 'raptor.png' %>",
-      audioSources: ["<%= audio_path 'raptor-sound.mp3' %>", "<%= audio_path 'raptor-sound.ogg' %>"]
+    .raptorize()
     .click (e)->
       Analytics.push ['_trackEvent', 'welcome', 'clickedPig']
       true # Don't prevent callback
 
+  # Attach the Swarm
+  new Konami(->
+    # Stop the User Label Scrolling
+    clearTimeout callbackPID
+    $('#spiderpig-label').text('!!! RAPTOR SWARM !!!')
+
+    # Release the Swarm
+    Analytics.push ['_trackEvent', 'welcome', 'konamiCode']
+    raptorize.raptorSwarm();
+
+    # Resume scrolling the User Label (30 seconds)
+    setTimeout(spiderpigCallback, 30000)
+    true # Run find
+  )
+
   # Update the User's label
-  spiderpigLabel = $('#spiderpig-label').text()
-  callbackPID = null
   spiderpigCallback = ->
     if $('#spiderpig-label').text() == spiderpigLabel
       $('#spiderpig-label').text('//github.com/bmorrall')

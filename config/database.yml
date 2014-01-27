@@ -7,7 +7,8 @@ development:
   adapter: postgresql
   encoding: unicode
   database: benmorrall_development
-  username: vagrant
+  username: postgres
+  password:
   pool: 5
   timeout: 5000
 
@@ -18,7 +19,8 @@ test: &test
   adapter: postgresql
   encoding: unicode
   database: benmorrall_test
-  username: vagrant
+  username: postgres
+  password:
   pool: 5
   timeout: 5000
 
@@ -26,6 +28,8 @@ production:
   adapter: postgresql
   encoding: unicode
   database: benmorrall_production
+  username: postgres
+  password:
   pool: 5
   timeout: 5000
 

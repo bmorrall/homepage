@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '1.9.3'
+ruby '2.1.0'
 
 gem 'rails', '4.0.2'
 
@@ -28,7 +28,13 @@ gem 'uglifier', '>= 1.0.3'
 gem 'jquery-rails'
 gem 'jquery-rails-cdn'
 
+# Use High Voltage for static pages
+gem 'high_voltage', '~> 2.1.0'
+
 gem 'simple_form'
+
+# Use Flutie for page styles
+gem 'flutie'
 
 gem 'devise'
 

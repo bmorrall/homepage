@@ -31,6 +31,9 @@
 # Ignore coverage
 /coverage
 
+# Ignore Ruby Config
+/.ruby-version
+
 # Ignore Vagrant
 /.vagrant
 

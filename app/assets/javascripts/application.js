@@ -11,20 +11,9 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery.raptorize.1.1
+//= require konami
 //= require bootstrap/alert
 //= require analytics
-//= require welcome
-
-var resizeContent = function() {
-  var navHeight = $('.navbar').height();
-  var contentHeight = window.innerHeight - navHeight;
-  $('#content').height(contentHeight).css('margin-top', navHeight);
-};
-
-$(function() {
-  resizeContent();
-  $(window).resize(function() {
-    resizeContent();
-  });
-});
+//= require layout
+//= require pages
 

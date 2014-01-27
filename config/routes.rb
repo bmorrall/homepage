@@ -18,7 +18,7 @@ Benmorrall::Application.routes.draw do
   end
   get "admin" => redirect('/users/me')
 
-  root :to => 'welcome#index'
+  # root :to => 'pages#show', id: 'home'
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

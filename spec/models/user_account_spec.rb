@@ -1,7 +1,7 @@
-require 'spec_helper'
+require "rails_helper"
 
-describe UserAccount do
-  it { should belong_to(:user) }
-  it { should allow_mass_assignment_of(:provider) }
-  it { should allow_mass_assignment_of(:uid) }
+RSpec.describe UserAccount do
+  it { is_expected.to belong_to(:user) }
+  it { is_expected.to validate_presence_of(:provider) }
+  it { is_expected.to validate_presence_of(:uid) }
 end

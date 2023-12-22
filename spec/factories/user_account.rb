@@ -1,9 +1,8 @@
 # This will guess the UserAccount class
-FactoryGirl.define do
+FactoryBot.define do
   factory :user_account do
-    uid { [1000..9999].sample }
-    provider 'facebook'
+    sequence(:uid) { |n| 1000 + n }
+    provider { "facebook" }
     user
   end
 end
-

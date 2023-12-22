@@ -1,28 +1,27 @@
 module ControllerMacros
-
   module ClassMethods
     def grant_ability(action, subject)
-      before(:each) do
+      before do
         stub_ability.can action, subject
       end
     end
 
     def login_unauthorized_user
-      before(:each) do
+      before do
         stub_ability
 
         @request.env["devise.mapping"] = Devise.mappings[:user]
-        @logged_in_user = FactoryGirl.create(:user)
+        @logged_in_user = FactoryBot.create(:user)
         sign_in @logged_in_user
       end
     end
 
     def login_user_with_ability(action, subject)
-      before(:each) do
+      before do
         stub_ability.can action, subject
 
         @request.env["devise.mapping"] = Devise.mappings[:user]
-        @logged_in_user = FactoryGirl.create(:user)
+        @logged_in_user = FactoryBot.create(:user)
         sign_in @logged_in_user
       end
     end
@@ -40,5 +39,4 @@ module ControllerMacros
     end
     @ability
   end
-
 end

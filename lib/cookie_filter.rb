@@ -8,9 +8,9 @@ class CookieFilter
 
     # use only one of the next two lines
 
-    if headers['Cache-Control'] =~ /public/
+    if /public/.match?(headers["Cache-Control"])
       # this will remove ALL cookies from the response
-      headers.delete 'Set-Cookie'
+      headers.delete "Set-Cookie"
       # this will remove just your session cookie
       # Rack::Utils.delete_cookie_header!(headers, '_app-name_session')
     end

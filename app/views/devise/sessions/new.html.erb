@@ -1,6 +1,10 @@
-<div id="auth-container">
+<div id="auth-container" class="container">
   <div class="auth-content">
     <%= bootstrap_flash %>
-    <%= link_to user_omniauth_authorize_path(:facebook), class: 'auth-facebook' do %><%= image_tag 'facebook_64.png', :alt => 'Sign in with Facebook'%><% end %>
+
+    <%= link_to image_tag('facebook_64.png', :alt => 'Sign in with Facebook'),
+      user_facebook_omniauth_authorize_path,
+      method: :post,
+      class: 'auth-facebook' %>
   </div>
 </div>

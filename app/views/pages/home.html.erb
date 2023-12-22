@@ -1,4 +1,9 @@
 <%- content_for(:extra_body_classes, 'welcome') -%>
+
+<a href="https://github.com/bmorrall/homepage" class="github-banner">
+	<%= image_tag "forkme_left_green_007200.png", alt: "Fork me on GitHub" %>
+</a>
+
 <div id="spiderpig-container">
 	<div id="spiderpig"><%= image_tag 'spiderpig.gif', size: '91x55' %></div>
 	<div id="spiderpig-label"><%= Time.now.in_time_zone %></div>

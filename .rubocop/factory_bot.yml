@@ -1,0 +1,8 @@
+require:
+  - rubocop-factory_bot
+
+FactoryBot/AttributeDefinedStatically:
+  Enabled: true
+
+FactoryBot/CreateList:
+  Enabled: true

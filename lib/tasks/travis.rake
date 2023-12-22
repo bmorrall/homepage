@@ -1,4 +1,3 @@
-
 # http://about.travis-ci.org/docs/user/gui-and-headless-browsers/#RSpec%2C-Jasmine%2C-Cucumber
 task :travis do
   ["rspec spec", "rake cucumber"].each do |cmd|

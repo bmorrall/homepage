@@ -1,30 +1,43 @@
-require 'spec_helper'
+require "rails_helper"
 
-describe "Pages" do
-
+RSpec.describe "Pages" do
   describe "GET /" do
     context "as a visitor" do
       it "renders the welcome page" do
         get root_url
-        response.status.should be(200)
+
+        expect(response).to be_successful
       end
-      it 'renders the Google Analytics content' do
-        Settings.analytics_account = 'UA-12345678'
+
+      it "renders the wonderpig" do
         get root_url
-        response.body.should include("Analytics.push(['_setAccount', 'UA-12345678'])")
+
+        expect(response.body).to have_selector("body.welcome #spiderpig-container")
+      end
+
+      it "provides the raptors" do
+        get root_url
+
+        expect(response.body).to have_selector("[data-image-source]")
+        expect(response.body).to have_selector("[data-audio-sources]")
+        expect(response.body).to have_selector("[data-swarm-audio-sources]")
+      end
+
+      it "renders the Google Analytics content" do
+        get root_url
+
+        expect(response.body).to include("Analytics.push(['_setAccount', 'UA-12345678-A'])")
       end
     end
   end
 
   describe "GET /home" do
-    context 'as a visitor' do
-      it 'redirects to the root_url' do
-        get page_path('home')
-        response.should redirect_to(root_url)
-        follow_redirect!
-        response.status.should be(200)
+    context "as a visitor" do
+      it "redirects to the root_url" do
+        get "/home"
+
+        expect(response).to redirect_to(root_url)
       end
     end
   end
-
 end

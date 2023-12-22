@@ -1,88 +1,81 @@
-source 'https://rubygems.org'
-ruby '2.1.0'
+source "https://rubygems.org"
 
-gem 'rails', '4.0.3'
+ruby "3.2.2"
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+# Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+gem "rails", "~> 7.1.2"
 
-# Temporarily allow attr_accessible
-gem 'protected_attributes'
+# The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
+gem "sprockets-rails"
 
-gem 'pg'
+# Use postgresql as the database for Active Record
+gem "pg", "~> 1.1"
 
-# Gems used only for assets and not required
-# in production environments by default.
-gem 'sass-rails',   '~> 4.0.1'
-gem 'coffee-rails', '~> 4.0.1'
+# Use the Puma web server [https://github.com/puma/puma]
+gem "puma", ">= 5.0"
 
-# Use Bootstrap for Admin Styles
-gem 'bootstrap-sass', '~> 3.0.3.0'
+# Bundle and process JavaScript
+gem "jsbundling-rails"
 
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', :platforms => :ruby
-gem 'bourbon'
-# gem 'bourbon', :git => 'git://github.com/bmorrall/bourbon.git', :branch => 'keyframes-mixin'
-gem 'uglifier', '>= 1.0.3'
+# Bundle and process CSS [https://github.com/rails/cssbundling-rails]
+gem "cssbundling-rails"
 
-gem 'jquery-rails'
-gem 'jquery-rails-cdn'
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem "tzinfo-data", platforms: %i[windows jruby]
 
-# Use High Voltage for static pages
-gem 'high_voltage', '~> 2.1.0'
+# Use devise for authentication
+gem "devise"
 
-gem 'simple_form'
+gem "omniauth"
+gem "omniauth-facebook"
+gem "omniauth-rails_csrf_protection"
 
-# Use Flutie for page styles
-gem 'flutie'
+# Use high_voltage to serve static pages
+gem "high_voltage"
 
-gem 'devise'
+# Use pundit for authorization
+gem "pundit"
 
-gem 'omniauth'
-gem 'omniauth-facebook'
+group :development, :test do
+  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem "debug", platforms: %i[mri windows]
 
-gem "cancan"
+  gem "dotenv-rails"
+end
 
-# Use NewRelic RPM for performance monitoring
-gem 'newrelic_rpm'
-
-# Use Settings Gem gem for properties
-gem "rails-settings-cached"
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
+group :development do
+  # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
+  # gem "spring"
+end
 
 group :test do
-  gem 'coveralls', require: false
-  gem "factory_girl_rails"
+  # Use Capybara for feature/integration tests
+  gem "capybara"
+  gem "capybara-screenshot"
+  gem "selenium-webdriver"
+
+  # Use Faker for generating fake data
   gem "faker"
+
+  # Used by factory_bot:lint rake task to clear the database
+  gem "database_cleaner"
+
+  # Use factory_bot for generating test data
+  gem "factory_bot_rails"
+
+  # Use pundit-matchers for easier assertions on policies
+  gem "pundit-matchers"
+
+  # Use shoulda-matchers for easier assertions on models
   gem "shoulda-matchers"
+
+  # Use simplecov for test coverage reports
+  gem "simplecov", require: false
+
+  # Use RSpec for testing
+  gem "rspec-rails", "~> 5.0.0"
 end
 
-group :test, :development do
-  gem "rspec-rails", "~> 2.0"
+group :development do
+  eval_gemfile "gemfiles/rubocop.gemfile"
 end
-
-group :test do
-  gem 'capybara'
-  gem 'capybara-webkit'
-  gem 'selenium-webdriver'
-
-  gem 'cucumber-rails', :require => false
-  gem 'pickle'
-  # database_cleaner is not required, but highly recommended
-  gem 'database_cleaner'
-end
-

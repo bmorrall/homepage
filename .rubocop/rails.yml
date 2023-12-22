@@ -1,0 +1,7 @@
+require:
+  - rubocop-rails
+  - standard-rails
+
+inherit_gem:
+  standard-rails: config/base.yml
+

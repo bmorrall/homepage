@@ -1,0 +1,33 @@
+@import "bootstrap-sass/vendor/assets/stylesheets/bootstrap/variables";
+@import "bootstrap-sass/vendor/assets/stylesheets/bootstrap/mixins";
+
+// Reset
+@import "bootstrap-sass/vendor/assets/stylesheets/bootstrap/normalize";
+
+// Core CSS
+@import "bootstrap-sass/vendor/assets/stylesheets/bootstrap/type";
+@import "bootstrap-sass/vendor/assets/stylesheets/bootstrap/code";
+@import "bootstrap-sass/vendor/assets/stylesheets/bootstrap/grid";
+@import "bootstrap-sass/vendor/assets/stylesheets/bootstrap/buttons";
+
+// Components
+@import "bootstrap-sass/vendor/assets/stylesheets/bootstrap/alerts";
+@import "bootstrap-sass/vendor/assets/stylesheets/bootstrap/close";
+
+@import "devise";
+@import "pages";
+
+// GitHub Banner
+.github-banner img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 0;
+  z-index: 10;
+}
+
+@media (max-width: 979px) {
+  .navbar-brand {
+    margin-left: 0;
+  }
+}

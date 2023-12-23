@@ -1,40 +1,41 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>BenMorrall.com</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <%= favicon_link_tag %>
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
+  <head>
+    <title>BenMorrall.com</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= favicon_link_tag %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
 
-  <%= stylesheet_link_tag "application" %>
-</head>
-<%= content_tag :body do %>
+    <%= stylesheet_link_tag "application" %>
+  </head>
+  <%= content_tag :body do %>
 
-<div class="container-narrow">
+    <div class="container-narrow">
 
-  <div class="masthead">
-    <ul class="nav nav-pills pull-right">
-      <li><%= link_to 'Home', root_url %></li>
-    </ul>
-    <h3 class="muted">Ben Morrall</h3>
-  </div>
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <li><%= link_to 'Home', root_url %></li>
+        </ul>
+        <h3 class="muted">Ben Morrall</h3>
+      </div>
 
-  <hr>
+      <hr>
 
-  <%= yield -%>
+      <%= yield -%>
 
-  <hr>
+      <hr>
 
-  <div class="footer">
-    <p style="float:right"><%= link_to "Sign out", destroy_user_session_path, data: {:method => :delete,:confirm => 'Are you Sure?'} %></a>
-    <p><%= Time.now %></p>
-  </div>
+      <div class="footer">
+        <p style="float:right"><%= link_to "Sign out", destroy_user_session_path, data: {:method => :delete,:confirm => 'Are you Sure?'} %></a>
+        <p><%= Time.now %></p>
+      </div>
 
-</div> <!-- /container -->
+    </div>
+ <!-- /container -->
 
-<div style="text-align: center">
-  <%= image_tag 'spiderpig.gif', size: '91x55' %>
-</div>
-<% end %>
+    <div style="text-align: center">
+      <%= image_tag 'spiderpig.gif', size: '91x55' %>
+    </div>
+  <% end %>
 </html>

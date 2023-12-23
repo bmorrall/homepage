@@ -46,6 +46,9 @@ end
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+
+  # Formats erb documents
+  gem "htmlbeautifier", require: false
 end
 
 group :test do

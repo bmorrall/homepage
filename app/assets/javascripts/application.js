@@ -16,4 +16,3 @@
 //= require analytics
 //= require layout
 //= require pages
-

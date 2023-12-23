@@ -157,3 +157,5 @@ import jQuery from 'jquery'
   }
 
 })(jQuery);
+
+export default window.raptorize

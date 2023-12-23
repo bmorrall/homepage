@@ -1,9 +1,9 @@
-<script type="text/javascript">
+<%= javascript_tag nonce: true do %>
   var _gaq = _gaq || [];
   <%- unless Rails.env.production? -%>
   Analytics.debug = true;
   <%- end -%>
-  Analytics.push(['_setAccount', '<%=j analytics_account %>']);
+  Analytics.push(['_setAccount', '<%= j analytics_account %>']);
   Analytics.push(['_trackPageview']);
 
   (function() {
@@ -11,4 +11,4 @@
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
-</script>
+<% end %>

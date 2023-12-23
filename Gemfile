@@ -48,6 +48,7 @@ group :development do
   # gem "spring"
 
   # Formats erb documents
+  gem "erb_lint", require: false
   gem "htmlbeautifier", require: false
 end
 

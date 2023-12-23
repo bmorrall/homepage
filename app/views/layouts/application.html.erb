@@ -3,8 +3,8 @@
   <head>
     <title>BenMorrall.com</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="true" />
-    <meta name="apple-mobile-web-app-title" content="Ben Morrall" />
+    <meta name="apple-mobile-web-app-capable" content="true">
+    <meta name="apple-mobile-web-app-title" content="Ben Morrall">
     <%= favicon_link_tag %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -13,17 +13,17 @@
   </head>
 
   <%= content_tag :body,
-    class: class_names(yield(:extra_body_classes)),
-    data: {
-      image_source: image_path('raptor.png'),
-      audio_sources: [audio_path('raptor-sound.mp3'), audio_path('raptor-sound.ogg')],
-      swarm_audio_sources: [audio_path('valkyries.mp3')]
-    } do %>
+        class: class_names(yield(:extra_body_classes)),
+        data: {
+          image_source: image_path("raptor.png"),
+          audio_sources: [audio_path("raptor-sound.mp3"), audio_path("raptor-sound.ogg")],
+          swarm_audio_sources: [audio_path("valkyries.mp3")]
+        } do %>
     <div id="content">
       <%= yield %>
     </div>
 
     <%= javascript_include_tag "application", "data-turbo-track": "reload" %>
-    <%= render 'analyticstracking', analytics_account: Rails.application.config.analytics_account %>
+    <%= render "analyticstracking", analytics_account: Rails.application.config.analytics_account %>
   <% end %>
 </html>
